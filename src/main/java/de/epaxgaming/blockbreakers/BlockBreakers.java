@@ -63,7 +63,7 @@ public final class BlockBreakers extends JavaPlugin {
         this.getCommand("minnedblocks").setExecutor(new Minnedblocks());
 
         this.getCommand("shop").setExecutor(new OpenShop());
-        this.getCommand("fly").setExecutor(new fly());
+        this.getCommand("fly").setExecutor(new fly(this));
         this.getCommand("buildworld").setExecutor(new buildworld());
         this.getCommand("Farmwelt").setExecutor(new Famrworld());
         this.getCommand("Farmworld").setExecutor(new Famrworld());
