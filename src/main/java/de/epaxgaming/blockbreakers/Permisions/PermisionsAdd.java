@@ -1,5 +1,6 @@
-package de.epaxgaming.blockbreakers.essentialscommands;
+package de.epaxgaming.blockbreakers.Permisions;
 
+import de.epaxgaming.blockbreakers.BlockBreakers;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -11,6 +12,11 @@ import org.jetbrains.annotations.NotNull;
 
 public class PermisionsAdd implements CommandExecutor {
 
+    private final BlockBreakers plugin;
+
+    public PermisionsAdd(BlockBreakers plugin) {
+        this.plugin = plugin;
+    }
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         Player p = (Player) sender;

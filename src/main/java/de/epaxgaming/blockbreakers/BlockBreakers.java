@@ -5,13 +5,14 @@ import de.epaxgaming.blockbreakers.Spawn.Spawn;
 import de.epaxgaming.blockbreakers.bossbars.BossBarListener;
 import de.epaxgaming.blockbreakers.commands.*;
 import de.epaxgaming.blockbreakers.coustomFile.playerInfoFile;
-import de.epaxgaming.blockbreakers.essentialscommands.PermisionsAdd;
+import de.epaxgaming.blockbreakers.Permisions.PermisionsAdd;
 
 import de.epaxgaming.blockbreakers.essentialscommands.fly;
 import de.epaxgaming.blockbreakers.essentialscommands.gm;
 import de.epaxgaming.blockbreakers.listeners.*;
 import de.epaxgaming.blockbreakers.menüs.OpenShop;
 
+import de.epaxgaming.blockbreakers.npc.PermisionsTabCompleter;
 import de.epaxgaming.blockbreakers.npc.SpawnNPCTabCompleter;
 import de.epaxgaming.blockbreakers.npc.spawnnpc;
 import de.epaxgaming.blockbreakers.scoreboards.ScoreboardListener;
@@ -68,7 +69,8 @@ public final class BlockBreakers extends JavaPlugin {
         this.getCommand("Farmwelt").setExecutor(new Famrworld());
         this.getCommand("Farmworld").setExecutor(new Famrworld());
         this.getCommand("test").setExecutor(new custommodel());
-        this.getCommand("permisions").setExecutor(new PermisionsAdd());
+        this.getCommand("permisions").setExecutor(new PermisionsAdd(this));
+        this.getCommand("permisions").setTabCompleter(new PermisionsTabCompleter(this));
         this.getCommand("spawnnpc").setExecutor(new spawnnpc());
         this.getCommand("spawnnpc").setTabCompleter(new SpawnNPCTabCompleter());
         this.getCommand("generateworld").setExecutor(new CreateWorld());
