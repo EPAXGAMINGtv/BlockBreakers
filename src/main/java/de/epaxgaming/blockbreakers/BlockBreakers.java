@@ -8,7 +8,7 @@ import de.epaxgaming.blockbreakers.essentialscommands.PermisionsAdd;
 import de.epaxgaming.blockbreakers.essentialscommands.fly;
 import de.epaxgaming.blockbreakers.essentialscommands.gm;
 import de.epaxgaming.blockbreakers.listeners.*;
-import de.epaxgaming.blockbreakers.menüs.Shop1;
+import de.epaxgaming.blockbreakers.menüs.OpenShop;
 
 import de.epaxgaming.blockbreakers.npc.SpawnNPCTabCompleter;
 import de.epaxgaming.blockbreakers.npc.spawnnpc;
@@ -51,7 +51,7 @@ public final class BlockBreakers extends JavaPlugin {
         this.getCommand("level").setExecutor(new level());
         this.getCommand("minnedblocks").setExecutor(new Minnedblocks());
 
-        this.getCommand("shop").setExecutor(new Shop1());
+        this.getCommand("shop").setExecutor(new OpenShop());
         this.getCommand("fly").setExecutor(new fly());
         this.getCommand("spawn").setExecutor(new Spawn());
         this.getCommand("buildworld").setExecutor(new buildworld());
