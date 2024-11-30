@@ -20,6 +20,7 @@ permissions:
     description: Permission for normal Players
     default: not op
 commands:
+  setspawn:
   spawn:
   Farmwelt:
   Farmworld:

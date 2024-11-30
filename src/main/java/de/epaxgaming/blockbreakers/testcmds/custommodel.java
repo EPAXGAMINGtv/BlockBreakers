@@ -17,10 +17,9 @@ public class custommodel implements CommandExecutor {
             ItemStack test1 = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
             ItemMeta m1 = test1.getItemMeta();
             m1.setCustomModelData(1);
-             test1.setItemMeta(m1);
+            test1.setItemMeta(m1);
 
-
-             player.getInventory().addItem(test1);
+            player.getInventory().addItem(test1);
         }
 
         return false;

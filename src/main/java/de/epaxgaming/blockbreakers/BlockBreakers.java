@@ -1,5 +1,7 @@
 package de.epaxgaming.blockbreakers;
 
+import de.epaxgaming.blockbreakers.Spawn.SetSpawn;
+import de.epaxgaming.blockbreakers.Spawn.Spawn;
 import de.epaxgaming.blockbreakers.bossbars.BossBarListener;
 import de.epaxgaming.blockbreakers.commands.*;
 import de.epaxgaming.blockbreakers.coustomFile.playerInfoFile;
@@ -15,6 +17,7 @@ import de.epaxgaming.blockbreakers.npc.spawnnpc;
 import de.epaxgaming.blockbreakers.scoreboards.ScoreboardListener;
 import de.epaxgaming.blockbreakers.tasks.safePlayerInformation;
 import de.epaxgaming.blockbreakers.testcmds.custommodel;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -23,7 +26,7 @@ import java.io.File;
 import java.io.IOException;
 
 public final class BlockBreakers extends JavaPlugin {
-
+    public FileConfiguration spawnConfig;
 
     @Override
     public void onEnable() {
@@ -46,6 +49,13 @@ public final class BlockBreakers extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ScoreboardListener(), this);
         getServer().getPluginManager().registerEvents(new BossBarListener(), this);
         //Commands
+        //Spawn
+        saveDefaultConfig();
+        spawnConfig = getConfig();
+        getCommand("setspawn").setExecutor(new SetSpawn(this));
+        getCommand("spawn").setExecutor(new Spawn(this));
+
+        //andere
         getCommand("money").setExecutor(new money(this));
         getCommand("gm").setExecutor(new gm());
         this.getCommand("level").setExecutor(new level());
@@ -53,7 +63,6 @@ public final class BlockBreakers extends JavaPlugin {
 
         this.getCommand("shop").setExecutor(new OpenShop());
         this.getCommand("fly").setExecutor(new fly());
-        this.getCommand("spawn").setExecutor(new Spawn());
         this.getCommand("buildworld").setExecutor(new buildworld());
         this.getCommand("Farmwelt").setExecutor(new Famrworld());
         this.getCommand("Farmworld").setExecutor(new Famrworld());
@@ -68,9 +77,16 @@ public final class BlockBreakers extends JavaPlugin {
         playerInfoFile.get().options().copyDefaults(true);
         playerInfoFile.save();        //Tasks
         safePlayerInformation safePlayerInformation = new safePlayerInformation(this);
-        safePlayerInformation.runTaskTimer(this, 1800000 , 1800000 );
+        safePlayerInformation.runTaskTimer(this, 1800000, 1800000);
     }
-    public  void savePermissions(Player player, String permission) {
+
+    @Override
+    public void onDisable() {
+        saveConfig();
+        getLogger().info("SpawnPlugin has been disabled!");
+    }
+
+    public void savePermissions(Player player, String permission) {
         File file = new File(getDataFolder(), "permissions.yml");
         YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
         config.set(player.getUniqueId().toString() + "." + permission, true);
@@ -89,5 +105,5 @@ public final class BlockBreakers extends JavaPlugin {
                 player.addAttachment(this, key, true);
             }
         }
-}
+    }
 }
