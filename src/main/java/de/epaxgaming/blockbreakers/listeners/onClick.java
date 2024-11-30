@@ -1,5 +1,6 @@
 package de.epaxgaming.blockbreakers.listeners;
 
+import de.epaxgaming.blockbreakers.util.ItemBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -61,12 +62,13 @@ public class onClick implements Listener {
             } else if (slot == 11) {
                 p.playSound(p.getLocation(), Sound.UI_BUTTON_CLICK, 1.0f, 1.0f);
                 if (event.getView().getTitle().equals("Shop")) {
-                    ItemStack i3 = new ItemStack(Material.DIAMOND_SWORD);
-                    Inventory inv1 = Bukkit.createInventory(null, 9 * 6, "ToolShop");
+
+                    Inventory ToolShop = Bukkit.createInventory(null, 9 * 6, "ToolShop");
+                    ToolShop.setItem(11, new ItemBuilder(DIAMOND_SWORD).setDisplayname("§7Tools").build());
                     ItemStack black = new ItemStack(BLACK_STAINED_GLASS_PANE);
                     for (int i = 0; i < 9 * 6; i++) {
-                        inv1.setItem(i, black);
-                    }                                                                                           
+                        ToolShop.setItem(i, new ItemBuilder(DIAMOND_SWORD).setDisplayname("§7Tools").build());
+                    }
                     ItemStack i2 = new ItemStack(WOODEN_SWORD);
                     ItemMeta m2 = i2.getItemMeta();
                     m2.setDisplayName("WoddenSword");
@@ -77,7 +79,7 @@ public class onClick implements Listener {
 
 
                     i2.setItemMeta(m2);
-                    inv1.setItem(0, i2);
+                    ToolShop.setItem(0, i2);
                     ItemStack i4 = new ItemStack(STONE_SWORD);
                     ItemMeta m4 = i4.getItemMeta();
                     m2.setDisplayName("StoneSword");
@@ -88,6 +90,7 @@ public class onClick implements Listener {
                     i4.setItemMeta(m4);
 
 
+
                     ItemStack i6 = new ItemStack(GOLDEN_SWORD);
                     ItemMeta m6 = i6.getItemMeta();
                     m6.setDisplayName("GoldSword");
@@ -96,7 +99,7 @@ public class onClick implements Listener {
                     lore2.add("§7Rightclick to Buy !");
                     m6.setLore(lore2);
                     i6.setItemMeta(m6);
-                    inv1.setItem(2, i6);
+                    ToolShop.setItem(2, i6);
                     ItemStack i7 = new ItemStack(IRON_SWORD);
                     ItemMeta m7 = i7.getItemMeta();
 
@@ -105,7 +108,7 @@ public class onClick implements Listener {
                     lore3.add("§7Rightclick to Buy !");
                     m7.setLore(lore3);
                     i7.setItemMeta(m7);
-                    inv1.setItem(3, i7);
+                    ToolShop.setItem(3, i7);
 
                     ItemStack i8 = new ItemStack(DIAMOND_SWORD);
                     ItemMeta m8 = i8.getItemMeta();
@@ -115,7 +118,7 @@ public class onClick implements Listener {
                     lore4.add("§7Rightclick to Buy !");
                     m8.setLore(lore4);
                     i8.setItemMeta(m8);
-                    inv1.setItem(4, i8);
+                    ToolShop.setItem(4, i8);
 
                     ItemStack i9 = new ItemStack(NETHERITE_SWORD);
                     ItemMeta m9 = i9.getItemMeta();
@@ -125,7 +128,7 @@ public class onClick implements Listener {
                     lore5.add("§7Rightclick to Buy !");
                     m9.setLore(lore5);
                     i9.setItemMeta(m9);
-                    inv1.setItem(5, i9);
+                    ToolShop.setItem(5, i9);
 
 
                     ItemStack custom1 = new ItemStack(NETHERITE_SWORD);
@@ -137,7 +140,7 @@ public class onClick implements Listener {
                     lore6.add("§7Rightclick to Buy !");
                     custom1m.setLore(lore6);
                     custom1.setItemMeta(custom1m);
-                    inv1.setItem(6, custom1);
+                    ToolShop.setItem(6, custom1);
                     ItemStack custom2 = new ItemStack(NETHERITE_SWORD);
                     ItemMeta custom2m = custom1.getItemMeta();
 
@@ -158,18 +161,18 @@ public class onClick implements Listener {
                     custom3m.setLore(lore8);
                     custom3m.setCustomModelData(1);
                     custom3.setItemMeta(custom3m);
-                    inv1.setItem(7, custom3);
+                    ToolShop.setItem(7, custom3);
 
                     ItemStack i5 = new ItemStack(BARRIER);
                     ItemMeta m5 = i5.getItemMeta();
                     m5.setDisplayName("§4Back");
 
                     i5.setItemMeta(m5);
-                    inv1.setItem(1, i4);
-                    inv1.setItem(7, custom2);
-                    inv1.setItem(8, custom3);
-                    inv1.setItem(2, i6);
-                    inv1.setItem(53, i5);
+                    ToolShop.setItem(1, i4);
+                    ToolShop.setItem(7, custom2);
+                    ToolShop.setItem(8, custom3);
+                    ToolShop.setItem(2, i6);
+                    ToolShop.setItem(53, i5);
 
 
                     ItemStack pi1 = new ItemStack(WOODEN_PICKAXE);
@@ -182,7 +185,7 @@ public class onClick implements Listener {
 
 
                     pi1.setItemMeta(p1);
-                    inv1.setItem(9, pi1);
+                    ToolShop.setItem(9, pi1);
 
                     ItemStack pi2 = new ItemStack(STONE_PICKAXE);
                     ItemMeta p2 = pi2.getItemMeta();
@@ -192,7 +195,7 @@ public class onClick implements Listener {
                     pic1.add("§7Rightclick to Buy !");
                     pi2.setLore(pic1);
                     pi2.setItemMeta(p2);
-                    inv1.setItem(10, pi2);
+                    ToolShop.setItem(10, pi2);
 
 
                     ItemStack pi3 = new ItemStack(GOLDEN_PICKAXE);
@@ -203,7 +206,7 @@ public class onClick implements Listener {
                     pic2.add("§7Rightclick to Buy !");
                     p3.setLore(pic2);
                     pi3.setItemMeta(p3);
-                    inv1.setItem(11, pi3);
+                    ToolShop.setItem(11, pi3);
 
                     ItemStack pi4 = new ItemStack(IRON_PICKAXE);
                     ItemMeta p4 = pi4.getItemMeta();
@@ -213,7 +216,7 @@ public class onClick implements Listener {
                     pic3.add("§7Rightclick to Buy !");
                     p4.setLore(pic3);
                     pi3.setItemMeta(p3);
-                    inv1.setItem(12, pi4);
+                    ToolShop.setItem(12, pi4);
 
                     ItemStack pi5 = new ItemStack(DIAMOND_PICKAXE);
                     ItemMeta p5 = pi5.getItemMeta();
@@ -223,7 +226,7 @@ public class onClick implements Listener {
                     pic4.add("§7Rightclick to Buy !");
                     p5.setLore(pic4);
                     pi4.setItemMeta(p5);
-                    inv1.setItem(13, pi5);
+                    ToolShop.setItem(13, pi5);
 
                     ItemStack pi6 = new ItemStack(NETHERITE_PICKAXE);
                     ItemMeta p6 = pi6.getItemMeta();
@@ -233,7 +236,7 @@ public class onClick implements Listener {
                     pic5.add("§7Rightclick to Buy !");
                     pi6.setLore(pic5);
                     pi6.setItemMeta(p6);
-                    inv1.setItem(14, pi6);
+                    ToolShop.setItem(14, pi6);
 
 
                     ItemStack custom1pi = new ItemStack(NETHERITE_PICKAXE);
@@ -244,7 +247,7 @@ public class onClick implements Listener {
                     lore6.add("§7Rightclick to Buy !");
                     custom1m1.setLore(cupi1);
                     custom1pi.setItemMeta(custom1m);
-                    inv1.setItem(15, custom1pi);
+                    ToolShop.setItem(15, custom1pi);
 
                     ItemStack custom2pi = new ItemStack(NETHERITE_PICKAXE);
                     ItemMeta custom2m2 = custom1.getItemMeta();
@@ -256,7 +259,7 @@ public class onClick implements Listener {
                     custom2m2.setLore(cupi2);
 
                     custom2pi.setItemMeta(custom2m2);
-                    inv1.setItem(16, custom2pi);
+                    ToolShop.setItem(16, custom2pi);
                     ItemStack custom3pi = new ItemStack(NETHERITE_PICKAXE);
                     ItemMeta custom3m3 = custom3pi.getItemMeta();
 
@@ -268,7 +271,7 @@ public class onClick implements Listener {
                     custom3m3.setLore(lore8);
                     custom3m3.setCustomModelData(1);
                     custom3.setItemMeta(custom3m);
-                    inv1.setItem(17, custom3pi);
+                    ToolShop.setItem(17, custom3pi);
 
                     ItemStack ax1 = new ItemStack(WOODEN_AXE);
                     ItemMeta am1 = ax1.getItemMeta();
@@ -280,7 +283,7 @@ public class onClick implements Listener {
 
 
                     pi1.setItemMeta(am1);
-                    inv1.setItem(18, ax1);
+                    ToolShop.setItem(18, ax1);
 
                     ItemStack ax2 = new ItemStack(STONE_AXE);
                     ItemMeta am2 = ax2.getItemMeta();
@@ -290,7 +293,7 @@ public class onClick implements Listener {
                     axe2.add("§7Rightclick to Buy !");
                     pi2.setLore(axe2);
                     pi2.setItemMeta(am2);
-                    inv1.setItem(19, ax2);
+                    ToolShop.setItem(19, ax2);
 
 
                     ItemStack ax3 = new ItemStack(GOLDEN_AXE);
@@ -301,7 +304,7 @@ public class onClick implements Listener {
                     axe3.add("§7Rightclick to Buy !");
                     am3.setLore(axe3);
                     ax3.setItemMeta(am3);
-                    inv1.setItem(20, ax3);
+                    ToolShop.setItem(20, ax3);
 
                     ItemStack ax4 = new ItemStack(IRON_AXE);
                     ItemMeta am4 = ax4.getItemMeta();
@@ -311,7 +314,7 @@ public class onClick implements Listener {
                     axe4.add("§7Rightclick to Buy !");
                     ax4.setLore(axe4);
                     ax4.setItemMeta(am4);
-                    inv1.setItem(21, ax4);
+                    ToolShop.setItem(21, ax4);
 
                     ItemStack ax5 = new ItemStack(DIAMOND_AXE);
                     ItemMeta am5 = ax5.getItemMeta();
@@ -321,7 +324,7 @@ public class onClick implements Listener {
                     axe5.add("§7Rightclick to Buy !");
                     ax5.setLore(axe5);
                     pi4.setItemMeta(am5);
-                    inv1.setItem(22, ax5);
+                    ToolShop.setItem(22, ax5);
 
                     ItemStack ax6 = new ItemStack(NETHERITE_PICKAXE);
                     ItemMeta am6 = ax6.getItemMeta();
@@ -331,7 +334,7 @@ public class onClick implements Listener {
                     axe6.add("§7Rightclick to Buy !");
                     ax6.setLore(axe6);
                     ax6.setItemMeta(am6);
-                    inv1.setItem(23, ax6);
+                    ToolShop.setItem(23, ax6);
 
 
                     ItemStack customaxe1 = new ItemStack(NETHERITE_AXE);
@@ -342,7 +345,7 @@ public class onClick implements Listener {
                     ca1.add("§7Rightclick to Buy !");
                     cam.setLore(ca1);
                     customaxe1.setItemMeta(cam);
-                    inv1.setItem(24, custom1pi);
+                    ToolShop.setItem(24, custom1pi);
 
                     ItemStack customaxe2 = new ItemStack(NETHERITE_PICKAXE);
                     ItemMeta cam2 = customaxe2.getItemMeta();
@@ -354,7 +357,7 @@ public class onClick implements Listener {
                     cam2.setLore(ca2);
 
                     custom2pi.setItemMeta(cam2);
-                    inv1.setItem(25, customaxe2);
+                    ToolShop.setItem(25, customaxe2);
 
                     ItemStack customaxe3= new ItemStack(NETHERITE_PICKAXE);
                     ItemMeta cam3 = customaxe3.getItemMeta();
@@ -366,10 +369,10 @@ public class onClick implements Listener {
                     cam3.setLore(ca3);
 
                     customaxe3.setItemMeta(cam3);
-                    inv1.setItem(26, customaxe3);
+                    ToolShop.setItem(26, customaxe3);
 
 
-                    event.getWhoClicked().openInventory(inv1);
+                    event.getWhoClicked().openInventory(ToolShop);
                     p.getOpenInventory();
                 }
             }
