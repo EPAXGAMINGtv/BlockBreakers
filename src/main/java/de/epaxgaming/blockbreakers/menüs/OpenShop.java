@@ -23,7 +23,7 @@ public class OpenShop implements CommandExecutor {
         }
 
         inventory.setItem(11, new ItemBuilder(DIAMOND_SWORD).setDisplayname("§7Tools").build());
-        inventory.setItem(53, new ItemBuilder(DIAMOND_SWORD).setDisplayname("§4Close").build());
+        inventory.setItem(53, new ItemBuilder(BARRIER).setDisplayname("§4Close").build());
 
         p.openInventory(inventory);
 
