@@ -1,0 +1,56 @@
+name: BlockBreakers
+version: '${project.version}'
+main: de.epaxgaming.blockbreakers.BlockBreakers
+api-version: '1.21'
+compatible-versions:
+  - "1.21.1"
+  - "1.21"
+  - "1.20.6"
+  - "1.20.4"
+  - "1.20.1"
+  - "1.19"
+  - "1.18"
+  - "1.17"
+  - "1.8"
+permissions:
+  permission.admin:
+    description: Permission for admins
+    default: op
+  permission.normal:
+    description: Permission for normal Players
+    default: not op
+commands:
+  spawn:
+  Farmwelt:
+  Farmworld:
+  buildworld:
+  enterworld:
+  generateworld:
+  spawnnpc:
+  money:
+    description: Zeigt dir dein geld an
+    usage: /money | /money <pay|give|set|> <amount> <player>
+  level:
+    description: Zeigt Dir in Welchen level du dioch befindest!
+
+  minnedblocks:
+    description: Zeigt An wie Viele BLöcke du Abgebaut Hast!
+  shop:
+    description: shop command!
+
+  gm:
+  fly:
+  permisions:
+
+  test:
+
+permission:
+  EPAX:
+    ESSENTIALS:
+      FLY:
+      GAMEMODE:
+      PERMSIONS:
+  BLOCK:
+    BREAKER:
+      GAMEMODE:
+
