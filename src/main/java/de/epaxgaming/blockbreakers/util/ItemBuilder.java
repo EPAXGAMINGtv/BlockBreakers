@@ -2,6 +2,7 @@ package de.epaxgaming.blockbreakers.util;
 
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -29,12 +30,23 @@ public class ItemBuilder {
         return this;
     }
 
+
+
     public ItemBuilder setUnbreakable(boolean unbreakable) {
         itemMeta.setUnbreakable(unbreakable);
         return this;
     }
 
 
+    public ItemBuilder addEnchant(Enchantment enchant,int level) {
+        itemMeta.addEnchant(enchant,level,true);
+        return this;
+    }
+
+    public ItemBuilder setCustomModeldata(int name) {
+        itemMeta.setCustomModelData(name);
+        return this;
+    }
 
     public ItemBuilder setNBT(String customNBT) {
         if (itemMeta != null) {
