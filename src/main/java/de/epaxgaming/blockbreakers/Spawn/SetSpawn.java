@@ -31,7 +31,7 @@ public class SetSpawn implements CommandExecutor {
 
             plugin.saveConfig();
 
-            p.sendMessage("§aSpawn wurde gesetzt!");
+            p.sendMessage(plugin.messagePrefix + "Spawn wurde gesetzt!");
             return true;
         }
         return false;

@@ -27,6 +27,7 @@ import java.io.IOException;
 
 public final class BlockBreakers extends JavaPlugin {
     public FileConfiguration spawnConfig;
+    public String messagePrefix = "§cBlockBreakers §7- ";
 
     @Override
     public void onEnable() {

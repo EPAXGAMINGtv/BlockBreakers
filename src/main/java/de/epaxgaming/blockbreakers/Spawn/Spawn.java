@@ -22,7 +22,7 @@ public class Spawn implements CommandExecutor {
         if (!(commandSender instanceof Player p)) return false;
 
         p.teleport(getSpawnLocation());
-        p.sendMessage("Du wurdest zum Spawn teleportiert.");
+        p.sendMessage(plugin.messagePrefix + "Du wurdest zum Spawn teleportiert.");
         return false;
     }
 
