@@ -40,14 +40,14 @@ public final class BlockBreakers extends JavaPlugin {
         for (Player player : getServer().getOnlinePlayers()) {
             loadPermissions(player);
         }
-        getServer().getPluginManager().registerEvents(new onClick(), this);
+        getServer().getPluginManager().registerEvents(new onClick(this), this);
         getServer().getPluginManager().registerEvents(new onJoin(), this);
         getServer().getPluginManager().registerEvents(new onQuitt(), this);
         getServer().getPluginManager().registerEvents(new onBlockBreak(), this);
         getServer().getPluginManager().registerEvents(new NoDropsListener(), this);
         getServer().getPluginManager().registerEvents(new NoMobBlockstoogle(), this);
         getServer().getPluginManager().registerEvents(new de.epaxgaming.blockbreakers.events.NPCListener(), this);
-        getServer().getPluginManager().registerEvents(new ScoreboardListener(), this);
+        getServer().getPluginManager().registerEvents(new ScoreboardListener(this), this);
         getServer().getPluginManager().registerEvents(new BossBarListener(), this);
         //Commands
         //Spawn
