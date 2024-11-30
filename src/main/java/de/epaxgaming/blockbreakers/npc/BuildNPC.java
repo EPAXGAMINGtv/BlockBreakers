@@ -9,19 +9,19 @@ public class BuildNPC {
     private final Villager entity;
 
     public BuildNPC(World world, Location location) {
-        // Spawne den NPC (hier als Beispiel ein Villager)
+
         this.entity = (Villager) world.spawnEntity(location, EntityType.VILLAGER);
 
-        // Stelle den NPC in der Luft
+
         location.setY(location.getY() + 0);
         entity.teleport(location);
 
-        // Mache den NPC unbeweglich und setze den Namen
-        entity.setAI(false); // Deaktiviert die KI des NPCs
-        entity.setCollidable(false); // Macht den NPC nicht kollidierbar
-        entity.setInvulnerable(true); // Mache den NPC unverwundbar
-        entity.setCustomName("BauWelt"); // Setze den Namen des NPCs
-        entity.setCustomNameVisible(true); // Mache den Namen sichtbar
+
+        entity.setAI(false);
+        entity.setCollidable(false);
+        entity.setInvulnerable(true);
+        entity.setCustomName("BauWelt");
+        entity.setCustomNameVisible(true);
     }
 
     public Villager getEntity() {

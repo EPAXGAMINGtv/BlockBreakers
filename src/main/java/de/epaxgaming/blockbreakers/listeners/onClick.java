@@ -1,5 +1,6 @@
 package de.epaxgaming.blockbreakers.listeners;
 
+import de.epaxgaming.blockbreakers.BlockBreakers;
 import de.epaxgaming.blockbreakers.util.ItemBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -15,14 +16,15 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
-import de.epaxgaming.blockbreakers.listeners.onJoin.*;
+
 import static org.bukkit.Material.*;
 
 public class onClick implements Listener {
+    private final BlockBreakers plugin;
 
+    public onClick(BlockBreakers plugin) {
+        this.plugin = plugin;
+    }
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
@@ -65,9 +67,8 @@ public class onClick implements Listener {
 
                     Inventory ToolShop = Bukkit.createInventory(null, 9 * 6, "ToolShop");
                     ToolShop.setItem(11, new ItemBuilder(DIAMOND_SWORD).setDisplayname("§7Tools").build());
-                    ItemStack black = new ItemStack(BLACK_STAINED_GLASS_PANE);
                     for (int i = 0; i < 9 * 6; i++) {
-                        ToolShop.setItem(i, new ItemBuilder(DIAMOND_SWORD).setDisplayname("§7Tools").build());
+                        ToolShop.setItem(i, new ItemBuilder(BLACK_STAINED_GLASS_PANE).setDisplayname("§7Tools").build());
                     }
 
                     ToolShop.setItem(0, new ItemBuilder(WOODEN_SWORD).setLore("§7Price §2 100$","§7Rightclick to Buy !").setDisplayname("").build());

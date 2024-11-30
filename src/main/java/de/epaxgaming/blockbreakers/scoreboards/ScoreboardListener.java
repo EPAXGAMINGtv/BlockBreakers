@@ -17,6 +17,12 @@ import de.epaxgaming.blockbreakers.listeners.onJoin;
 
 public class ScoreboardListener implements Listener {
 
+    private final BlockBreakers plugin;
+
+    public ScoreboardListener(BlockBreakers plugin) {
+        this.plugin = plugin;
+    }
+
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();

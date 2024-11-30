@@ -14,7 +14,8 @@ public class fly implements CommandExecutor {
             Player p = (Player) commandSender;
             if (p.hasPermission(new Permission("EPAX:ESSENTIALS:FLY"))){
                 if (p.getAllowFlight()==true) {
-                   p.setFlying(false);
+                    p.sendMessage();
+                    p.setFlying(false);
                     p.setAllowFlight(false);
                 } else {
                     p.setAllowFlight(true);

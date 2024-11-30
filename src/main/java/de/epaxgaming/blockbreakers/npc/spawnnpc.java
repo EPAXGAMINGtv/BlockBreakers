@@ -22,7 +22,7 @@ public class spawnnpc implements CommandExecutor {
                     player.sendMessage("Shop NPC wurde an deiner Position gespawnt!"); // Rückmeldung an den Spieler
                 }
                 if (args.length > 0 && args[0].equalsIgnoreCase("help")) {
-                    // NPC erstellen und an der Spielerposition spawnen
+
                     HelpNPC npc = new HelpNPC(player.getWorld(), location); // Erstelle einen neuen NPC
                     player.sendMessage("Help NPC wurde an deiner Position gespawnt!"); // Rückmeldung an den Spieler
                 }
