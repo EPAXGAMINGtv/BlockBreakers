@@ -13,10 +13,10 @@ public class onQuitt implements Listener {
         Player p = e.getPlayer();
 
 
-        playerInfoFile.get().set("Players." + p.getUniqueId() + ".coins", onJoin.getPlayerInformation(p).getCoins());
-        playerInfoFile.get().set("Players." + p.getUniqueId() + ".level", onJoin.getPlayerInformation(p).getLevel());
-        playerInfoFile.get().set("Players." + p.getUniqueId() + ".rang", onJoin.getPlayerInformation(p).getRang());
-        playerInfoFile.get().set("Players." + p.getUniqueId() + ".minedBlocks", onJoin.getPlayerInformation(p).getMinedBlocks());
+        playerInfoFile.get().set("Players." + p.getUniqueId() + ".coins", OnJoin.getPlayerInformation(p).getCoins());
+        playerInfoFile.get().set("Players." + p.getUniqueId() + ".level", OnJoin.getPlayerInformation(p).getLevel());
+        playerInfoFile.get().set("Players." + p.getUniqueId() + ".rang", OnJoin.getPlayerInformation(p).getRang());
+        playerInfoFile.get().set("Players." + p.getUniqueId() + ".minedBlocks", OnJoin.getPlayerInformation(p).getMinedBlocks());
 
         playerInfoFile.save();
         playerInfoFile.reload();

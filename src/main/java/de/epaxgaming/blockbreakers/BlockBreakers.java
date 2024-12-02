@@ -42,7 +42,7 @@ public final class BlockBreakers extends JavaPlugin {
             loadPermissions(player);
         }
         getServer().getPluginManager().registerEvents(new onClick(this), this);
-        getServer().getPluginManager().registerEvents(new onJoin(), this);
+        getServer().getPluginManager().registerEvents(new OnJoin(), this);
         getServer().getPluginManager().registerEvents(new onQuitt(), this);
         getServer().getPluginManager().registerEvents(new onBlockBreak(), this);
         getServer().getPluginManager().registerEvents(new NoDropsListener(), this);

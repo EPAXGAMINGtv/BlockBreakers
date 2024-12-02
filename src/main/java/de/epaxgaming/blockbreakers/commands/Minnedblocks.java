@@ -1,6 +1,6 @@
 package de.epaxgaming.blockbreakers.commands;
 
-import de.epaxgaming.blockbreakers.listeners.onJoin;
+import de.epaxgaming.blockbreakers.listeners.OnJoin;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -12,7 +12,7 @@ public class Minnedblocks implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         Player p = (Player) commandSender;
 
-        commandSender.sendMessage("§cBlockBreaker - "+"§7Du hast "+onJoin.getPlayerInformation(p).getMinedBlocks()+" Blöcke Abgebaut!");
+        commandSender.sendMessage("§cBlockBreaker - "+"§7Du hast "+ OnJoin.getPlayerInformation(p).getMinedBlocks()+" Blöcke Abgebaut!");
 
 
 

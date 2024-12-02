@@ -6,10 +6,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import de.epaxgaming.blockbreakers.listeners.inventrycloese;
 
 import java.util.HashMap;
-public class onJoin implements Listener {
+public class OnJoin implements Listener {
 
     static HashMap<Player, playerInformation> playerInformations = new HashMap<>();
 

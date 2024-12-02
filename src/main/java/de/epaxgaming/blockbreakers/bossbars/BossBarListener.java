@@ -12,7 +12,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.boss.BossBar;
-import de.epaxgaming.blockbreakers.listeners.onJoin;
 
 
 public class BossBarListener implements Listener {

@@ -1,15 +1,12 @@
 package de.epaxgaming.blockbreakers.listeners;
 
 import de.epaxgaming.blockbreakers.cahtDesign.sendTitle;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BellRingEvent;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.player.PlayerHarvestBlockEvent;
 
 public class onBlockBreak implements Listener {
     public int COALORE = 5;
@@ -24,8 +21,8 @@ public class onBlockBreak implements Listener {
     public void onBlockBreak(BlockBreakEvent e){
         Player p = e.getPlayer();
         Material breakedBlock = e.getBlock().getType();
-        int currentCoins = onJoin.getPlayerInformation(p).getCoins();
-        int minedBlocks = onJoin.getPlayerInformation(p).getMinedBlocks();
+        int currentCoins = OnJoin.getPlayerInformation(p).getCoins();
+        int minedBlocks = OnJoin.getPlayerInformation(p).getMinedBlocks();
         minedBlocks++;
 
 
@@ -59,10 +56,10 @@ public class onBlockBreak implements Listener {
         }
 
 
-        onJoin.getPlayerInformation(p).setMinedBlocks(minedBlocks);
-        onJoin.getPlayerInformation(p).setCoins(currentCoins);
-        onJoin.getPlayerInformation(p).getMinedBlocks();
-        onJoin.getPlayerInformation(p).getLevel();
+        OnJoin.getPlayerInformation(p).setMinedBlocks(minedBlocks);
+        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
+        OnJoin.getPlayerInformation(p).getMinedBlocks();
+        OnJoin.getPlayerInformation(p).getLevel();
         if (minedBlocks ==100){
             COALORE+= 5;
             IRONORE += 5;
@@ -76,10 +73,10 @@ public class onBlockBreak implements Listener {
             p.sendMessage("§cBlockBreakers - "+"§7Du Boostest den ganzen sever !");
             sendTitle.sendHotbarTitle("#0fd14f", "+1000 coins  wegen level up !", p);
             currentCoins+= 1000;
-            onJoin.getPlayerInformation(p).setCoins(currentCoins);
+            OnJoin.getPlayerInformation(p).setCoins(currentCoins);
             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
 
-            onJoin.getPlayerInformation(p).setLevel(1);
+            OnJoin.getPlayerInformation(p).setLevel(1);
         }
         if (minedBlocks ==200){
             p.sendMessage("§cBlockBreakers - "+"§7Du Boostest den ganzen sever !");
@@ -95,8 +92,8 @@ public class onBlockBreak implements Listener {
             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
             p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 1.0f, 1.0f);
             currentCoins+= 2000;
-            onJoin.getPlayerInformation(p).setCoins(currentCoins);
-            onJoin.getPlayerInformation(p).setLevel(2);
+            OnJoin.getPlayerInformation(p).setCoins(currentCoins);
+            OnJoin.getPlayerInformation(p).setLevel(2);
         }
         if (minedBlocks ==300){
             p.sendMessage("§cBlockBreakers - "+"§7Du Boostest den ganzen sever !");
@@ -112,8 +109,8 @@ public class onBlockBreak implements Listener {
             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
             p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 1.0f, 1.0f);
             currentCoins+= 3000;
-            onJoin.getPlayerInformation(p).setCoins(currentCoins);
-            onJoin.getPlayerInformation(p).setLevel(3);
+            OnJoin.getPlayerInformation(p).setCoins(currentCoins);
+            OnJoin.getPlayerInformation(p).setLevel(3);
         }
         if (minedBlocks ==400){
             p.sendMessage("§cBlockBreakers - "+"§7Du Boostest den ganzen sever !");
@@ -129,8 +126,8 @@ public class onBlockBreak implements Listener {
             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
             p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 1.0f, 1.0f);
             currentCoins+= 4000;
-            onJoin.getPlayerInformation(p).setCoins(currentCoins);
-            onJoin.getPlayerInformation(p).setLevel(4);
+            OnJoin.getPlayerInformation(p).setCoins(currentCoins);
+            OnJoin.getPlayerInformation(p).setLevel(4);
         }
         if (minedBlocks ==500){
             p.sendMessage("§cBlockBreakers - "+"§7Du Boostest den ganzen sever !");
@@ -146,8 +143,8 @@ public class onBlockBreak implements Listener {
             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
             p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 1.0f, 1.0f);
             currentCoins+= 5000;
-            onJoin.getPlayerInformation(p).setCoins(currentCoins);
-            onJoin.getPlayerInformation(p).setLevel(5);
+            OnJoin.getPlayerInformation(p).setCoins(currentCoins);
+            OnJoin.getPlayerInformation(p).setLevel(5);
         }
         if (minedBlocks ==1000){
             p.sendMessage("§cBlockBreakers - "+"§7Du Boostest den ganzen sever !");
@@ -163,8 +160,8 @@ public class onBlockBreak implements Listener {
             p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
             p.playSound(p.getLocation(), Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 1.0f, 1.0f);
             currentCoins+= 10000;
-            onJoin.getPlayerInformation(p).setCoins(currentCoins);
-            onJoin.getPlayerInformation(p).setLevel(5);
+            OnJoin.getPlayerInformation(p).setCoins(currentCoins);
+            OnJoin.getPlayerInformation(p).setLevel(5);
         }}
 
 

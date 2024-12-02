@@ -2,7 +2,7 @@ package de.epaxgaming.blockbreakers.commands;
 
 import de.epaxgaming.blockbreakers.BlockBreakers;
 import de.epaxgaming.blockbreakers.cahtDesign.sendTitle;
-import de.epaxgaming.blockbreakers.listeners.onJoin;
+import de.epaxgaming.blockbreakers.listeners.OnJoin;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -34,11 +34,11 @@ public class money implements CommandExecutor, TabCompleter {
                         sendTitle.sendHotbarTitle("#0fd14f", "Bitte gib eine gültige zahl an!", p);
                         return true;
                     }
-                    if (ammount < onJoin.getPlayerInformation(p).getCoins()) {
+                    if (ammount < OnJoin.getPlayerInformation(p).getCoins()) {
                         Player targetPlayer = plugin.getServer().getPlayer(args[2]);
 
-                        onJoin.getPlayerInformation(targetPlayer).setCoins(onJoin.getPlayerInformation(targetPlayer).getCoins() + ammount);
-                        onJoin.getPlayerInformation(p).setCoins(onJoin.getPlayerInformation(p).getCoins() - ammount);
+                        OnJoin.getPlayerInformation(targetPlayer).setCoins(OnJoin.getPlayerInformation(targetPlayer).getCoins() + ammount);
+                        OnJoin.getPlayerInformation(p).setCoins(OnJoin.getPlayerInformation(p).getCoins() - ammount);
                         sendTitle.sendHotbarTitle("#0fd14f", "Du hast erolgreich " + ammount + " Coins an " + targetPlayer.getName() + " überwiesen!", p);
                     } else {
                         sendTitle.sendHotbarTitle("#0fd14f", "Du hast nicht genügend coins!", p);
@@ -55,7 +55,7 @@ public class money implements CommandExecutor, TabCompleter {
                             return true;
                         }
                         Player targetPlayer = plugin.getServer().getPlayer(args[2]);
-                        onJoin.getPlayerInformation(targetPlayer).setCoins(ammount);
+                        OnJoin.getPlayerInformation(targetPlayer).setCoins(ammount);
                         sendTitle.sendHotbarTitle("#0fd14f", "Du hast erolgreich die Coins von " + targetPlayer.getName() + " auf " + ammount + " gesetzt!", p);
                     } else {
                         sendTitle.sendHotbarTitle("#0fd14f", "Du hast nicht die Berechtigung um diesen Befehl auszuführen!", p);
@@ -70,14 +70,14 @@ public class money implements CommandExecutor, TabCompleter {
                             return true;
                         }
                         Player targetPlayer = plugin.getServer().getPlayer(args[2]);
-                        onJoin.getPlayerInformation(targetPlayer).setCoins(onJoin.getPlayerInformation(targetPlayer).getCoins() + ammount);
+                        OnJoin.getPlayerInformation(targetPlayer).setCoins(OnJoin.getPlayerInformation(targetPlayer).getCoins() + ammount);
                         sendTitle.sendHotbarTitle("#0fd14f", "Du hast erolgreich " + ammount + " Coins an " + targetPlayer.getName() + " gegeben!", p);
                     } else {
                         sendTitle.sendHotbarTitle("#0fd14f", "Du hast nicht die Berechtigung um diesen Befehl auszuführen!", p);
                     }
                 }
             } else if (args.length == 0) {
-                sendTitle.sendHotbarTitle("#0fd14f", "Du hast " + onJoin.getPlayerInformation(p).getCoins() + " Coins", p);
+                sendTitle.sendHotbarTitle("#0fd14f", "Du hast " + OnJoin.getPlayerInformation(p).getCoins() + " Coins", p);
             } else {
                 sendTitle.sendHotbarTitle("#ofd14f", "Bitte gib gültige argumente an!", p);
             }

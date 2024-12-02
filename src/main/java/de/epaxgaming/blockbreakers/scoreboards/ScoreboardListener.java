@@ -13,7 +13,7 @@ import org.bukkit.scoreboard.Score;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.ScoreboardManager;
 import org.bukkit.scoreboard.DisplaySlot;
-import de.epaxgaming.blockbreakers.listeners.onJoin;
+import de.epaxgaming.blockbreakers.listeners.OnJoin;
 
 public class ScoreboardListener implements Listener {
 
@@ -33,12 +33,12 @@ public class ScoreboardListener implements Listener {
     public void onBlockBreak(BlockBreakEvent e) {
         Player player = e.getPlayer(); // Korrekte Methode zum Abrufen des Spielers
         // Hier kannst du den Zähler für abgebauten Blöcke erhöhen
-        onJoin.getPlayerInformation(player).getMinedBlocks(); // Beispiel: erhöhe die Anzahl der abgebauten Blöcke
+        OnJoin.getPlayerInformation(player).getMinedBlocks(); // Beispiel: erhöhe die Anzahl der abgebauten Blöcke
         createScoreboard(player);
     }
 
     public void createScoreboard(Player player) {
-        int minedBlocks = onJoin.getPlayerInformation(player).getMinedBlocks();
+        int minedBlocks = OnJoin.getPlayerInformation(player).getMinedBlocks();
         ScoreboardManager manager = Bukkit.getScoreboardManager();
         Scoreboard scoreboard = manager.getNewScoreboard();
 
@@ -51,9 +51,9 @@ public class ScoreboardListener implements Listener {
         score1.setScore(minedBlocks); // Setze den Wert auf die abgebauten Blöcke
 
         Score score2 = objective.getScore("coins:");
-        score2.setScore(onJoin.getPlayerInformation(player).getCoins());
+        score2.setScore(OnJoin.getPlayerInformation(player).getCoins());
         Score score3 = objective.getScore("Level:");
-        score3.setScore(onJoin.getPlayerInformation(player).getLevel());
+        score3.setScore(OnJoin.getPlayerInformation(player).getLevel());
 
         Score score4 = objective.getScore("");
 

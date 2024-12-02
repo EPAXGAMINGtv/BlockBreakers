@@ -1,12 +1,10 @@
 package de.epaxgaming.blockbreakers.listeners;
 
 import de.epaxgaming.blockbreakers.BlockBreakers;
+import de.epaxgaming.blockbreakers.util.BuyBuilder;
 import de.epaxgaming.blockbreakers.util.ItemBuilder;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.Sound;
-import org.bukkit.attribute.Attribute;
-import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -48,7 +46,7 @@ public class onClick implements Listener {
             Inventory clickedInventory = event.getClickedInventory();
 
 
-            int currentCoins = onJoin.getPlayerInformation(p).getCoins();
+            int currentCoins = OnJoin.getPlayerInformation(p).getCoins();
 
 
 
@@ -140,18 +138,9 @@ public class onClick implements Listener {
 
                 if (event.getView().getTitle().equals("ToolShop")) {
 
-                    if (currentCoins > 100) {
-                        p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 1.0f, 1.0f);
-                        currentCoins -= 100;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
-                        ItemStack woddensword = new ItemStack(WOODEN_SWORD);
-                        p.getInventory().addItem(woddensword);
-
-                        p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich Ein Woddensword Gekauft!");
-                    }
-                } else {
-                    p.sendMessage("§cBlockBreakers - Du hast nicht genug Geld!");
                 }
+
+
             }
             if (slot == 1) {
 
@@ -162,7 +151,7 @@ public class onClick implements Listener {
                         ItemStack Stonesword = new ItemStack(STONE_SWORD);
                         p.getInventory().addItem(Stonesword);
                         currentCoins -= 200;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                         p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich Ein Stonesword Gekauft!");
                     } else {
@@ -180,7 +169,7 @@ public class onClick implements Listener {
                         ItemStack Stonesword = new ItemStack(GOLDEN_SWORD);
                         p.getInventory().addItem(Stonesword);
                         currentCoins -= 300;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                         p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich Ein Goldsword Gekauft!");
                     } else {
@@ -200,7 +189,7 @@ public class onClick implements Listener {
                         ItemStack Stonesword = new ItemStack(IRON_SWORD);
                         p.getInventory().addItem(Stonesword);
                         currentCoins -= 400;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                         p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich Ein Ironsword Gekauft!");
                     } else {
@@ -220,7 +209,7 @@ public class onClick implements Listener {
                         ItemStack Stonesword = new ItemStack(DIAMOND_SWORD);
                         p.getInventory().addItem(Stonesword);
                         currentCoins -= 500;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                         p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich Ein Diamondsword Gekauft!");
                     } else {
@@ -240,7 +229,7 @@ public class onClick implements Listener {
                         ItemStack Stonesword = new ItemStack(NETHERITE_SWORD);
                         p.getInventory().addItem(Stonesword);
                         currentCoins -= 1000;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
                         p.playSound(p.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 1.0f, 1.0f);
                         p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich Ein Netheritessword Gekauft!");
                     } else {
@@ -260,7 +249,7 @@ public class onClick implements Listener {
                         ItemStack Stonesword = new ItemStack(NETHERITE_SWORD);
                         p.getInventory().addItem(Stonesword);
                         currentCoins -= 100000;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                         p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich Ein Netheritesword Gekauft!");
                     } else {
@@ -287,7 +276,7 @@ public class onClick implements Listener {
                         Stonesword.setItemMeta(sword);
                         p.getInventory().addItem(Stonesword);
                         currentCoins -= 1000000;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                         p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich Ein Diamondsword Gekauft!");
                     } else {
@@ -308,7 +297,7 @@ public class onClick implements Listener {
                         ItemStack Stonesword = new ItemStack(NETHERITE_SWORD);
                         p.getInventory().addItem(Stonesword);
                         currentCoins -= 25000000;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                         p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich Ein Netheritesword Gekauft!");
                     } else {
@@ -326,7 +315,7 @@ public class onClick implements Listener {
                         ItemStack Stonesword = new ItemStack(WOODEN_PICKAXE);
                         p.getInventory().addItem(Stonesword);
                         currentCoins -= 100;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                         p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eine Holzspitzhacke Gekauft!");
                     } else {
@@ -344,7 +333,7 @@ public class onClick implements Listener {
                         ItemStack Stonesword = new ItemStack(STONE_PICKAXE);
                         p.getInventory().addItem(Stonesword);
                         currentCoins -= 200;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                         p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eine Steinspitzhacke Gekauft!");
                     } else {
@@ -363,7 +352,7 @@ public class onClick implements Listener {
                         ItemStack Stonesword = new ItemStack(GOLDEN_PICKAXE);
                         p.getInventory().addItem(Stonesword);
                         currentCoins -= 300;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                         p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eine Goldspitzhacke Gekauft!");
                     } else {
@@ -381,7 +370,7 @@ public class onClick implements Listener {
                         ItemStack Stonesword = new ItemStack(IRON_PICKAXE);
                         p.getInventory().addItem(Stonesword);
                         currentCoins -= 400;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                         p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eine Eisenspitzhacke Gekauft!");
                     } else {
@@ -399,7 +388,7 @@ public class onClick implements Listener {
                         ItemStack Stonesword = new ItemStack(DIAMOND_PICKAXE);
                         p.getInventory().addItem(Stonesword);
                         currentCoins -= 500;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                         p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eine Diaspitzhacke Gekauft!");
                     } else {
@@ -417,7 +406,7 @@ public class onClick implements Listener {
                         ItemStack Stonesword = new ItemStack(NETHERITE_PICKAXE);
                         p.getInventory().addItem(Stonesword);
                         currentCoins -= 1000;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                         p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eineNetheritespitzhacke Gekauft!");
                     } else {
@@ -435,7 +424,7 @@ public class onClick implements Listener {
                         ItemStack Stonesword = new ItemStack(NETHERITE_PICKAXE);
                         p.getInventory().addItem(Stonesword);
                         currentCoins -= 100000;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                         p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eine Customspitzhacke Gekauft!");
                     } else {
@@ -453,7 +442,7 @@ public class onClick implements Listener {
                         ItemStack Stonesword = new ItemStack(NETHERITE_PICKAXE);
                         p.getInventory().addItem(Stonesword);
                         currentCoins -= 100000;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                         p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eine Customspitzhacke Gekauft!");
                     } else {
@@ -471,7 +460,7 @@ public class onClick implements Listener {
                         ItemStack Stonesword = new ItemStack(NETHERITE_PICKAXE);
                         p.getInventory().addItem(Stonesword);
                         currentCoins -= 100000;
-                        onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                        OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                         p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eine Customspitzhacke Gekauft!");
                     } else {
@@ -490,7 +479,7 @@ public class onClick implements Listener {
                     ItemStack Stonesword = new ItemStack(WOODEN_AXE);
                     p.getInventory().addItem(Stonesword);
                     currentCoins -= 100;
-                    onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                    OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                     p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eine HolzAxe Gekauft!");
                 } else {
@@ -508,7 +497,7 @@ public class onClick implements Listener {
                     ItemStack Stonesword = new ItemStack(STONE_AXE);
                     p.getInventory().addItem(Stonesword);
                     currentCoins -= 200;
-                    onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                    OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                     p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eine Steinatzt Gekauft!");
                 } else {
@@ -527,7 +516,7 @@ public class onClick implements Listener {
                     ItemStack Stonesword = new ItemStack(GOLDEN_AXE);
                     p.getInventory().addItem(Stonesword);
                     currentCoins -= 300;
-                    onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                    OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                     p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eine GoldAxt Gekauft!");
                 } else {
@@ -545,7 +534,7 @@ public class onClick implements Listener {
                     ItemStack Stonesword = new ItemStack(IRON_AXE);
                     p.getInventory().addItem(Stonesword);
                     currentCoins -= 400;
-                    onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                    OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                     p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eine EisenAzt Gekauft!");
                 } else {
@@ -563,7 +552,7 @@ public class onClick implements Listener {
                     ItemStack Stonesword = new ItemStack(DIAMOND_AXE);
                     p.getInventory().addItem(Stonesword);
                     currentCoins -= 500;
-                    onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                    OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                     p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eine DiamandAxt Gekauft!");
                 } else {
@@ -581,7 +570,7 @@ public class onClick implements Listener {
                     ItemStack Stonesword = new ItemStack(NETHERITE_AXE);
                     p.getInventory().addItem(Stonesword);
                     currentCoins -= 1000;
-                    onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                    OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                     p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eine NetheriteAzt Gekauft!");
                 } else {
@@ -599,7 +588,7 @@ public class onClick implements Listener {
                     ItemStack Stonesword = new ItemStack(NETHERITE_AXE);
                     p.getInventory().addItem(Stonesword);
                     currentCoins -= 100000;
-                    onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                    OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                     p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eine CustomAXt Gekauft!");
                 } else {
@@ -617,7 +606,7 @@ public class onClick implements Listener {
                     ItemStack Stonesword = new ItemStack(NETHERITE_AXE);
                     p.getInventory().addItem(Stonesword);
                     currentCoins -= 100000;
-                    onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                    OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                     p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eine Customaxt Gekauft!");
                 } else {
@@ -635,7 +624,7 @@ public class onClick implements Listener {
                     ItemStack Stonesword = new ItemStack(NETHERITE_PICKAXE);
                     p.getInventory().addItem(Stonesword);
                     currentCoins -= 100000;
-                    onJoin.getPlayerInformation(p).setCoins(currentCoins);
+                    OnJoin.getPlayerInformation(p).setCoins(currentCoins);
 
                     p.sendMessage("§cBlockBreakers - §7Sie habe Erfolgreich eine Customspitzhacke Gekauft!");
                 } else {
